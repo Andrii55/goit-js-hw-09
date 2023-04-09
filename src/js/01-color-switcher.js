@@ -1,23 +1,24 @@
 const DELAY = 1000;
 
 const refs = {
-  btnStartStop: document.querySelectorAll('button[type="button"]'),
+  btnStartStopEL: document.querySelectorAll('button[type="button"]'),
+  btnStartEL: document.querySelector('[data-start]'),
+  btnStopEL: document.querySelector('[data-stop]'),
 };
 
-refs.btnStartStop.forEach(button => {
+refs.btnStartStopEL.forEach(button => {
   button.addEventListener('click', onHandleClick);
 });
 let intervalId;
 
 function onHandleClick(e) {
-  const btnStart = document.querySelector('[data-start]');
-  const btnStop = document.querySelector('[data-stop]');
-  if (btnStart === e.target && !intervalId) {
+  
+  if (refs.btnStartEL === e.target && !intervalId) {
     intervalId = setInterval(() => {
       const randomColor = getRandomHexColor();
       document.body.style.backgroundColor = randomColor;
     }, DELAY);
-  } else if (btnStop === e.target && intervalId) {
+  } else if (refs.btnStopEL === e.target && intervalId) {
     clearInterval(intervalId);
     intervalId = null;
   }
