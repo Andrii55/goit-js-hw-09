@@ -5,24 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Promise generator</title>
     <link rel="stylesheet" href="css/common.css" />
+    <style>
+      .btn__link {
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        color: black;
+        transition: color 0.3s ease;
+      }
+
+      .btn__link:hover,
+      .btn__link:focus {
+        color: red;
+      }
+      .form__input {
+        display: block;
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+
+      .form__btn {
+        display: block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .form__btn:hover {
+        background-color: #0062cc;
+      }
+    </style>
   </head>
   <body>
-    <p><a href="index.html">Go back</a></p>
+    <p><a class="btn__link" href="index.html">Go back</a></p>
 
     <form class="form">
       <label>
         First delay (ms)
-        <input type="number" name="delay" required />
+        <input class="form__input" type="number" name="delay" required />
       </label>
       <label>
         Delay step (ms)
-        <input type="number" name="step" required />
+        <input class="form__input" type="number" name="step" required />
       </label>
       <label>
         Amount
-        <input type="number" name="amount" required />
+        <input class="form__input" type="number" name="amount" required />
       </label>
-      <button type="submit">Create promises</button>
+      <button class="form__btn" type="submit">Create promises</button>
     </form>
 
     <script src="js/03-promises.js" type="module"></script>
